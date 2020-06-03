@@ -18,13 +18,15 @@ public interface EssayMapper {
      * @return
      */
     @Options(useGeneratedKeys = true,keyProperty = "essayId")
-    @Insert("insert into essay(essay_title,essay_abstract,essay_author,essay_publish_time,save_path) values(#{essayTitle},#{essayAbstract},#{essayAuthor},#{essayPublishTime},#{savePath})")
+    @Insert("insert into essay(essay_title,essay_abstract,essay_author,essay_publish_time,save_path) " +
+            "values(#{essayTitle},#{essayAbstract},#{essayAuthor},#{essayPublishTime},#{savePath},#{commentNum})")
     int insertEssay(Essay essay);
 
     @Delete("delete from essay where essay_id=#{essayId}")
     int deleteEssayById(Integer essayId);
 
-    @Update("update essay set essay_title=#{essayTitle},essay_author=#{essayAuthor},essay_publish_time=#{essayPublishTime},save_path=#{savePath}")
+    @Update("update essay set essay_title=#{essayTitle},essay_author=#{essayAuthor}," +
+            "essay_publish_time=#{essayPublishTime},save_path=#{savePath},comment_num=#{commentNum}")
     void updateEssay(Essay essay);
 
     @Select("select * from sys_user where essay_title=#{essayTitle} and essay_author=#{essayAuthor} and essay_publish_time=#{essayPublishTime}")

@@ -29,6 +29,7 @@ public class EssayIndex {
     private String essayAuthor;
     private Date essayPublishTime;
     private String savePath;
+    private int commentNum;
 
 
     public Integer getEssayId() {
@@ -79,5 +80,11 @@ public class EssayIndex {
         this.savePath = savePath;
     }
 
+    public int getCommentNum() {
+        return commentNum;
+    }
 
+    public void setCommentNum(int commentNum) {
+        this.commentNum = commentNum;
+    }
 }

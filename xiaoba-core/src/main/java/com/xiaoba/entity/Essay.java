@@ -12,6 +12,7 @@ public class Essay extends BaseEntity{
     private String essayAuthor;
     private Date essayPublishTime;
     private String savePath;
+    private int commentNum;
 
 
     public Integer getEssayId() {
@@ -70,7 +71,13 @@ public class Essay extends BaseEntity{
         this.essayAbstract = essayAbstract;
     }
 
+    public int getCommentNum() {
+        return commentNum;
+    }
 
+    public void setCommentNum(int commentNum) {
+        this.commentNum = commentNum;
+    }
 
     @Override
     public String toString() {
