@@ -1,9 +1,8 @@
-package com.xiaoba.service.Impl;
+package com.xiaoba.service.impl;
 
 import com.xiaoba.contants.ElasticSearchContants;
 import com.xiaoba.entity.Essay;
 import com.xiaoba.entity.EssayIndex;
-import com.xiaoba.entity.SysUser;
 import com.xiaoba.service.ElasticSearchService;
 import com.xiaoba.util.PathLoadUtil;
 import org.elasticsearch.action.search.SearchRequest;
@@ -11,16 +10,12 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.unit.TimeValue;
-import org.elasticsearch.index.query.MatchQueryBuilder;
-import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryStringQueryBuilder;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
 
-import javax.naming.directory.SearchResult;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +28,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Service
 public class ElasticSearchServiceImpl implements ElasticSearchService {
-    
+
     @Autowired
     private RestHighLevelClient restHighLevelClient;
 
