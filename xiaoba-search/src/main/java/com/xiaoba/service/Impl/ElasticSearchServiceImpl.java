@@ -33,8 +33,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Service
 public class ElasticSearchServiceImpl implements ElasticSearchService {
-
-
+    
     @Autowired
     private RestHighLevelClient restHighLevelClient;
 
